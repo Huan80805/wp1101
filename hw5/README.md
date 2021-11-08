@@ -1,4 +1,4 @@
-# Usage 
+# Implementation   
 1. C: clear all
 2. +/-: invert input
 3. %: percent(ie. *0.01)
@@ -9,3 +9,6 @@
    example "1" > "+" > "2" > "x" > "3" > "=" output: 7   
 8. update screen when multiple operators clicked
 9. handle exception: infinity/-infinity  
+# Usage  
+1. npm/yarn install
+2. npm/yarn start
