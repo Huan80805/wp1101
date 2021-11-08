@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>TODO APP in pure JS</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+
+<body>
+  <div id="root" class="todo-app__root">
+
+    <!-- header -->
+    <header class="todo-app__header">
+      <h1 class="todo-app__title">todos</h1>
+    </header>
+
+    <!-- todo list -->
+    <section class="todo-app__main">
+
+      <!-- input -->
+      <form id="todo-form" onsubmit="return false">
+        <input class="todo-app__input" id="todo-input" type="text" placeholder="What needs to be done?">
+      </form>
+
+      <!-- list item -->
+      <ul class="todo-app__list" id="todo-list">
+      </ul>
+
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

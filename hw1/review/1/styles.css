@@ -1,0 +1,136 @@
+:root {
+  --foreground: rgb(180, 179, 196);
+  --foreground-accent: rgb(218, 218, 221);
+  --background: rgb(27, 35, 51);
+  --background-accent: rgb(17, 21, 41);
+  --home-album-image-width: 600px;
+  --home-album-image-height: 255px;
+  --album-image-width: 800px;
+  --album-image-height: 341px;
+}
+.body {
+  margin: 0px;
+  font-family: 'Vollkorn', serif;
+  color: var(--foreground);
+}
+.home-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-accent);
+}
+.home-header {
+  position: relative;
+  flex: 0 0 400px;
+  overflow: hidden;
+  background-image: url(images/title.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home-header-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.9));
+}
+.home-header-texts {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.home-albums {
+  background-color: var(--background);
+}
+.home-albums-title {
+  text-align: center;
+}
+.home-albums-grid {
+  border-spacing: 0px 10px;
+  display: grid;
+  grid-template-columns: minmax(0px, 100px) auto minmax(0px, 100px);
+}
+.home-albums-subgrid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat( auto-fit, minmax(var(--home-album-image-width), 1fr));
+  column-gap: 15px;
+}
+.home-albums-subgrid-item {
+  position: relative;
+  margin: 10px;
+  width: var(--home-album-image-width);
+  height: var(--home-album-image-height);
+}
+.home-albums-subgrid-item > * {
+  transition: 200ms;
+}
+.home-albums-subgrid-item-overlay {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.6));
+}
+.home-albums-subgrid-item-overlay:hover {
+  opacity: 20%;
+}
+.home-albums-subgrid-item-overlay > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.home-albums-subgrid-item-title {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  font-size: 20px;
+}
+.home-albums-subgrid-item:hover > .home-albums-subgrid-item-title {
+  color: var(--foreground-accent);
+}
+.album-header {
+  position: relative;
+  flex: 0 0 300px;
+}
+.album-header-text {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.album-images {
+  flex: 0 0 auto;
+  background-color: var(--background);
+}
+.album-images-flexbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.album-images-item {
+  position: relative;
+  margin: 50px;
+  width: var(--album-image-width);
+  height: var(--album-image-height);
+  transition: 200ms;
+}
+.album-images-item:hover {
+  transform: scale(1.01);
+}
+.album-images-item > a {
+  display: block;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+.footer {
+  flex: 1 0 60px;
+}
+.footer-text {
+  text-align: center;
+}

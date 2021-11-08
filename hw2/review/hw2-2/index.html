@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital photo album</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+
+<body>
+    <a id="TOP"></a>
+    <div class="banner">
+        <div class="banner-box">
+            <div class="banner-container logo">
+                <h2 class="logo-text">Digital photo album</h2>
+            </div>
+            <div class="blank-box"></div>
+            <li class="search-box">
+
+                <div class="dropdown">
+                    <button id="mode-bottom" onclick="myFunction(this.id)" class="dropbtn">Mode</button>
+                    <div id="mode-myDropdown" class="dropdown-content">
+                        <a class="menu" id="Add" onclick="choosemode(this.id)">Add</a>
+                        <a class="menu" id="Remove" onclick="choosemode(this.id)">Remove</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button id="al-bottom" onclick="myFunction(this.id)" class="dropbtn">Album</button>
+                    <div id="al-myDropdown" class="dropdown-content">
+                        <a class="menu" id="Change-Album" onclick="choosealb(this.id)">Change-Album</a>
+                    </div>
+                </div>
+
+                <form class="search-form" onsubmit="return false;">
+                    <label data-track="icon">
+                         <input class="icon-bottom" id="myButton" type="submit" data-track="icon" tabindex="-1" onclick="buttonCode()">
+                    </label>
+                    <input class="field" id="addurl" type="text" placeholder="相片" name="text" value="" autocomplete="off">
+                </form>
+            </li>
+        </div>
+    </div>
+
+    <div class="cat-box">
+        <div class="cat-container">
+            <div class="links">
+                <div class="links-box">
+                    <a class="cat-text" href="#TOP">HOME</a>
+                </div>
+                <div class="links-box">
+                    <a class="cat-text" href="#ALBUM">ALBUM</a>
+                </div>
+                <div class="links-box">
+                    <a class="cat-text" href="#PRIVIEW">PRIVIEW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <a id="ALBUM"></a>
+        <div class="select-album">
+            <a class="album-text">Select Album</a>
+        </div>
+        <div class="album-container">
+            <div class="album-background"></div>
+        </div>
+
+        <div class="img-result">
+            <a id="PRIVIEW"></a>
+            <div class="big-view">
+                <div class="big-view-box">
+                    <img class="big-image" src="" id="bigimage">
+                </div>
+            </div>
+
+            <div id="totalnumberofimage">Select Album</div>
+
+            <div class="preview-container"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
