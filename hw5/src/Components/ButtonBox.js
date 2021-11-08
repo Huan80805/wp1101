@@ -3,7 +3,7 @@ import Button from "./Button"
 import { useState } from "react"
 
 const btnValues = [
-    ["C", "+-", "%", "/"],
+    ["AC", "+/-", "%", "/"],
     [7, 8, 9, "X"],
     [4, 5, 6, "-"],
     [1, 2, 3, "+"],
@@ -15,8 +15,8 @@ const ButtonBox = (props) => {
     const calc = props.calc
     const setCalc = props.setCalc
     const btnClassifier = (btn) => {
-        if (btn === "C"){ return resetClicked}
-        else if (btn === "+-"){ return signClicked}
+        if (btn === "AC"){ return resetClicked}
+        else if (btn === "+/-"){ return signClicked}
         else if (btn === "%"){ return percentClicked}
         else if (btn === "="){ return equalClicked}
         else if (btn === "/" || btn === "X" || btn === "-" || btn === "+"){ return operatorClicked}
