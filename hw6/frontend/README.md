@@ -1,3 +1,3 @@
 # Usage  
-yarn server  # To launch server
-yarn start   # To launch client
+yarn server  # To launch server   
+yarn start   # To launch client   
