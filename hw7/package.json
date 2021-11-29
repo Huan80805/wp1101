@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "cd frontend && yarn start",
-    "server": "cd backend && yarn server"
+    "server": "cd backend && yarn server",
+    "install": "yanr install && cd frontend && yarn install && cd ../backend && yarn install"
   },
   "dependencies": {
     "@emotion/react": "^11.7.0",
