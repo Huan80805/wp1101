@@ -23,7 +23,7 @@ router.get('/allPosts', async(req, res) => {
 // TODO 3-(1): create the 2nd API (/api/postDetail)
 router.get('/postDetail', async(req, res) => {
     try{
-        const post = await Post.findOne({postID:req.query.pid})
+        const post = await Post.findOne({postId:req.query.pid})
         if (post)res.status(200).send({"message":"success", "post":post})
         else res.status(403).send({"message":"error","post":null})
     }

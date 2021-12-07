@@ -30,6 +30,8 @@ function Edit(props) {
             variant="outlined"
             className="post-title"
             id="pid-create-title"
+            value={title}
+            onChange={(e) =>setTitle(e.target.value.trim())}
           />
         </div>
 
@@ -41,6 +43,8 @@ function Edit(props) {
             className="post-content-editor"
             id="pid-create-content"
             multiline
+            value={content}
+            onChange={(e) =>setContent(e.target.value.trim())}
           />
         </div>
 
