@@ -25,7 +25,6 @@ function Post(props) {
       props.navigate(-1)
     }, 300)
   }
-
   // TODO 3-(2): fetch the full information of a post from database
   useEffect(() => {
     const loadPost = async(pid) => {
