@@ -6,10 +6,7 @@ import { Button, StepConnector } from '@material-ui/core'
 
 function Board(props) {
   const [posts, setPosts] = useState([])
-  const [count, setCount] = useState(0)
   // TODO 2-(2): fetch all posts from database
-
-
   useEffect(() => {
     const getAllPosts = async()=>{
       const {data: {message, data}} = await instance.get('/allPosts')

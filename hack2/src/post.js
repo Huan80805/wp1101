@@ -28,12 +28,12 @@ function Post(props) {
 
   // TODO 3-(2): fetch the full information of a post from database
   useEffect(() => {
-    const loadPost = async() => {
+    const loadPost = async(pid) => {
       const {message, post} =  await getPostDetail(pid)
       setData(post)
     }
-    loadPost()
-  },[])
+    loadPost(pid)
+  },[pid])
   
   return (
     <div className="article-wrapper">

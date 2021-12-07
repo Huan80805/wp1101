@@ -23,7 +23,6 @@ router.get('/allPosts', async(req, res) => {
 // TODO 3-(1): create the 2nd API (/api/postDetail)
 router.get('/postDetail', async(req, res) => {
     try{
-        console.log(req.body)
         const post = await Post.findOne({postID:req.query.pid})
         if (post)res.status(200).send({"message":"success", "post":post})
         else res.status(403).send({"message":"error","post":null})
@@ -36,12 +35,13 @@ router.get('/postDetail', async(req, res) => {
 // TODO 4-(1): create the 3rd API (/api/newPost)
 router.post('/newPost', async(req, res) => {
     try{
-        const post = await Post.updateOne({
+        const newPost = new Post({
             postId:req.body.pid,
             title: req.body.title,
             content:req.body.content,
             timestamp:req.body.timestamp
         })
+        const post = await newPost.save()
         if (post)res.status(200).send({"message":"success"})
         else res.status(403).send({"message":"error","post":null})
     }
