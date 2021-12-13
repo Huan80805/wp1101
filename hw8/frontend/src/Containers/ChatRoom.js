@@ -78,3 +78,4 @@ const ChatRoom = ({status, messages, clearMessages, sendMessage})=> {
     )
 }
 export default ChatRoom
+export {displayStatus}
