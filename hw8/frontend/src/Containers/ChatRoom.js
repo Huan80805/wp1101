@@ -1,31 +1,15 @@
 import Title from "../Components/Title"
 import Message from "../Components/Message"
-import { useState, useEffect, useRef } from 'react'
-import { Input, message,Button, Tag } from 'antd'
+import { useState,useRef } from 'react'
+import { Input, Button, Tag } from 'antd'
+import { displayStatus } from "./App"
 
-const displayStatus = (payload) => {
-  //message show up automatically at top
-  if (payload.msg) {
-    const { type, msg } = payload
-    const content = {
-      content: msg, duration: 0.5 }
-    switch (type) {
-      case 'success':
-        message.success(content)
-        break
-      case 'error':
-      default:
-        message.error(content)
-        break
-}}}
 
-const ChatRoom = ({status, messages, clearMessages, sendMessage})=> {
+
+const ChatRoom = ({messages, clearMessages, sendMessage})=> {
     const [username, setUsername] = useState('')
     const [body, setBody] = useState('')  // textBody
     const bodyRef = useRef(null)
-    useEffect(() => {
-        // effect when status's state change
-        displayStatus(status)},[status])
     return(
         <>
             <Title>
@@ -78,4 +62,3 @@ const ChatRoom = ({status, messages, clearMessages, sendMessage})=> {
     )
 }
 export default ChatRoom
-export {displayStatus}
