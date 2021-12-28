@@ -87,9 +87,16 @@ export default function Dashboard() {
    * @param {ID} id - the id of the task which should be changed
    * @param {Status} status - the new status for the task
    */
-  const handleUpdateTask = (id, status) => {
+  const handleUpdateTask = async(id, status) => {
     // Call graphql mutation function
     // TODO 3 Use `updateTask` and pass the correct variables
+    // console.log(id, status)
+    updateTask({
+      variables: {
+        id: id,
+        status: status,
+      },
+    });
   };
 
   // drag and drop
