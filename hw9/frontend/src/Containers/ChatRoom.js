@@ -63,8 +63,7 @@ const ChatRoom = ({me, displayStatus})=> {
                                 name1:me,
                                 name2:name
                             }})
-                        createChatBox(name)
-                        // setActiveKey(createChatBox(name))
+                        setActiveKey(createChatBox(name))
                         setModalVisible(false)
 
                     }}
@@ -78,7 +77,7 @@ const ChatRoom = ({me, displayStatus})=> {
                 onChange={(e) => setMessageInput(e.target.value)}
                 enterButton="Send"
                 placeholder="Type a message here..."
-                onSearch={(msg) => {
+                onSearch={async (msg) => {
                     // check error: empty msg 
                     if (!msg) {
                         displayStatus({
@@ -86,8 +85,10 @@ const ChatRoom = ({me, displayStatus})=> {
                             msg: 'Please enter a message.'
                         })
                         return
-                    }    
-                    sendMessage({ name: me, body: msg })
+                    }
+                    console.log(activeKey)                        
+                    await sendMessage({
+                        variables:{ from: me, to: activeKey, message:msg }})
                     setMessageInput('')
                 }}
             ></Input.Search>

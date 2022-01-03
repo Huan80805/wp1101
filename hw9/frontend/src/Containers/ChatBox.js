@@ -34,7 +34,7 @@ const ChatBox =({me, friend, ...props}) => {
                 updateQuery:(prev, {subscriptionData}) =>{
                     if(!subscriptionData.data) return prev
                     const newMessage = subscriptionData.data.message.body
-                    console.log(prev)
+                    console.log(newMessage)
                     return {
                         chatBox:{
                             messages: [...prev.chatBox.messages, newMessage],
@@ -42,7 +42,7 @@ const ChatBox =({me, friend, ...props}) => {
                     }
                 }
             })
-        }catch(e){}
+        }catch(e){console.log("subscription error")}
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [subscribeToMore]);
     if (loading) return <p>loading</p>
